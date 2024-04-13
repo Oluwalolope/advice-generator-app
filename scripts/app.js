@@ -11,13 +11,25 @@ const updatUI = (data) => {
 
     //update advice ID
     adviceId.innerHTML = `Advice #${id}`;
-
+    
     //update the advice
     advice.innerHTML = `<p>"${adviceData}"</p>`;
 };
 
-//Fetch data from the api when the button is clicked
+//Add a click event listener
 button.addEventListener('click', () => {
+    //Changing the header back to its initial value
+    adviceId.innerHTML = "Advice";
+    
+    //Adding a skeleton loading animation to the page while waiting for content
+    advice.innerHTML = `
+    <div class="skeleton-text"></div>
+    <div class="skeleton-text"></div>
+    <div class="skeleton-text"></div>
+    <div class="skeleton-text"></div>
+    `;
+
+    //Fetch data from the api when the button is clicked
     getAdvice().then(data => updatUI(data))
     .catch(err => console.log(err));
 });

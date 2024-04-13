@@ -1,10 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 body {
     font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
     font-weight: 800;
     font-style: normal;
+    margin: 0;
     display: flex;
+    min-height : 100vh;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -17,8 +18,10 @@ body {
     background-color: hsl(217, 19%, 24%);
     box-sizing: border-box;
     padding: 1rem;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 h1 {
     text-transform: uppercase;
@@ -27,9 +30,17 @@ h1 {
     color: hsl(150, 100%, 66%);
 }
 p {
+    width: 100%;
     color: rgba(255, 255, 255, 0.7);
     text-align: center;
-    font-size: 1.75rem;
+    font-size: clamp(1rem , 1.4vw + .2rem, 1.75rem);
+    text-wrap: wrap;
+    white-space: wrap;
+}
+.divider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
 }
 button {
     border-radius: 50%;
@@ -38,36 +49,46 @@ button {
     border: 1px solid transparent;
     width: 50px;
     height: 50px;
+    margin-bottom: -40px;
 }
 button:hover {
     cursor: pointer;
     background-color: hsl(193, 38%, 86%);
 }
+button:focus-visible {
+    outline: 2px solid black;
+    background-color: hsl(193, 38%, 86%);
+}
 .attribution { 
-    margin-top: 30px;
+    margin-top: 60px;
     font-size: 11px;
     text-align: center; 
     color: hsl(0, 0%, 100%);
 }
 .attribution a { 
+    color: grey; 
+    text-decoration: none;
+}
+.attribution a:hover { 
     color: hsl(0, 0%, 0%); 
+    text-decoration: underline;
 }
 
 /* loading animation */
 .advice {
-    min-height: 1rem;
+    width: 100%;
 }
 .skeleton-text {
     width: 100%;
-    height: .5rem;
-    border-radius: .125rem;
+    height: .6rem;
+    border-radius: .25rem;
     opacity: .7;
     animation: skeleton-loading 1s linear infinite alternate;
-    margin-bottom: .25rem;
+    margin-bottom: .45rem;
 }
 .skeleton-text:last-child {
     width: 80%;
-    margin-bottom: 0;
+    margin-bottom: .7rem;
 }
 
 @keyframes skeleton-loading {
