@@ -22,6 +22,9 @@ Users should be able to:
 - Mobile-first workflow
 - Vanilla JS
 
+## Design Credit
+Design inspiration and credit go to [Frontend Mentor](www.frontendmentor.io) 🎨.
+
 ### What I learned
 
 Throughout this project, I've been on a journey of discovery, unraveling the intricacies of asynchronous programming. Embracing the power of `await` and `async`, I've taken strides in my understanding, constantly learning and adapting. One notable accomplishment has been integrating loading animations to bridge the gap between frontend and backend interactions, showcasing my evolving grasp of creating fluid user experiences.
